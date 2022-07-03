@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Game {
@@ -8,9 +9,35 @@ public class Game {
         System.out.print("-> :");
         //Player player = new Player(input.nextLine());
         Player player = new Player("Michael");
-        System.out.printf("Good Luck %s !!",player.getName());
+        System.out.printf("Good Luck %s !\n",player.getName());
         player.SelectChar();
-        System.out.println(player.getCharName());
+        
+        Location location = null;
+        boolean gameLoop = true;
+        while(gameLoop){
+
+            System.out.println("Where do you want to go ?");
+            System.out.println("1 - Safe House");
+            System.out.println("2 - Tool Store");
+            System.out.print("->: ");
+            int selectedLoc = input.nextInt();
+            switch (selectedLoc) {
+                case 1:
+                    location = new SafeHouse(player);
+                    break;
+                case 2:
+                    location = new ToolStore(player);        
+                    break;
+                default:
+                    location = new SafeHouse(player);
+                    break;
+            }
+            if(!location.onLocation()){
+                System.out.println("Game Over ...");
+                gameLoop = false;
+                break;
+            }
+        }
         
     }
 }

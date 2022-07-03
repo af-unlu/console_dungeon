@@ -5,6 +5,13 @@ public abstract class GameChar {
     private int health;
     private int money;
 
+
+    public int getId() {
+        return Id;
+    }
+    public void setId(int id) {
+        Id = id;
+    }
     public String getName() {
         return name;
     }
@@ -30,6 +37,7 @@ public abstract class GameChar {
         this.money = money;
     }
     public GameChar(int Id,String name,int damage, int health, int money) {
+        this.Id = Id;
         this.name = name;
         this.damage = damage;
         this.health = health;

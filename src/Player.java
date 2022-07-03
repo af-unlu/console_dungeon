@@ -16,7 +16,6 @@ public class Player {
     public void SelectChar(){
         //polymorphism
         GameChar[] gameChars = {new Samurai(),new Archer(),new Knight()};
-
         System.out.println("Choose a Character");
         for (GameChar gameChar : gameChars) {
             System.out.printf("\n%s",gameChar.getName());
@@ -31,8 +30,6 @@ public class Player {
             //default samurai
             initPlayer(gameChars[0]);
         }
-        input.close();
-        
     }
 
     public void initPlayer(GameChar gameChar){
