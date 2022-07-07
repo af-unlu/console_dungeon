@@ -15,7 +15,7 @@ public class Game {
         Location location = null;
         boolean gameLoop = true;
         while(gameLoop){
-
+            System.out.println("Player Damage "+player.getDamage());;
             System.out.println("Where do you want to go ?");
             System.out.println("1 - Safe House");
             System.out.println("2 - Tool Store");

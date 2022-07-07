@@ -7,11 +7,19 @@ public class Player {
     private int money;
     private String name;
     private String charName;
+    private Inventory inventory;
 
+    public Inventory getInventory() {
+        return inventory;
+    }
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
     private Scanner input = new Scanner(System.in);
 
     Player(String name){
         this.name = name;
+        this.inventory = new Inventory();
     }
     public void SelectChar(){
         //polymorphism
@@ -41,7 +49,7 @@ public class Player {
 
     //#region getter setter
     public int getDamage() {
-        return damage;
+        return damage + this.inventory.getWeapon().getDamage();
     }
     public void setDamage(int damage) {
         this.damage = damage;
